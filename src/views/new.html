@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create a link</title>
+        <style>
+            * {
+                font-family: sans-serif;
+            }
+            
+            body {
+                background-color: #000000;
+                color: #ffffff;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Create a link</h1>
+        <form action="/create" action="get">
+            <input type="url" name="url" placeholder="URL" autocomplete='false' autofocus>
+            <input type="submit" value="Create URL">
+        </form>
+    
+        <footer>
+            <p>Site by <a href='https://namd.dev/'>NotAMojangDev</a></p>
+        </footer>
+    </body>
+</html>
