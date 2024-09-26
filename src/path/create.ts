@@ -10,13 +10,18 @@ export default async function createLinkEndpoint(ctx: Context, db: D1Database) {
     
     if (!isValidUrl(url)) return new Response("Invalid URL!", {status: 400})
     
-    let id: String = generateStandardID();
-    
     let Query = Queries.getURL;
-    
-    let result = await db.prepare(Query).bind(id).first("url")
-    
-    if (result === "") id = generateIDCustom(11)
+    let iter = 0;
+    let id: String;
+    do {
+        if (iter === 10) {
+            id = generateIDCustom(11)
+            break;
+        }
+        id = generateStandardID();
+        var result = await db.prepare(Query).bind(id).first("url")
+        iter++;
+    } while (result !== "") 
     
     let writeQuery: string = Queries.saveURL;
     
