@@ -1,12 +1,15 @@
 import { Context } from "hono";
 import Queries from "../util/queries";
 import { pageNotFound } from "../util/404";
+import { whichId } from "./which";
 
-export default async function handleRedirect(ctx: Context, db: D1Database) {
+export default async function handleRedirect(ctx: Context, db: D1Database): Promise<Response> {
     let url: URL = new URL(ctx.req.url);
     let getQuery: string = Queries.getURL;
     
     let id = url.pathname.split("/")[1]
+    
+    if (id.endsWith("+")) return whichId(id.replace("+", ""), db);
     
     let ref: string | null = await db.prepare(getQuery).bind(id).first("url")
     

@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import newLink from '../views/new.html';
+import newLink from '../views/homepage.html';
 
 export default async function newLinkPage(ctx: Context) {
     
