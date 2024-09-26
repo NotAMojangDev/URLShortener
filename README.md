@@ -11,7 +11,7 @@ This app is hosted on Cloudflare Workers at https://s.namd.dev
 - https://s.namd.dev/new?url={URL} - params: {URL} to redirect to - Create a URL and get it back as text
 - https://s.namd.dev/{ID} - params: {ID}: ID for your redirect - redirect to the destination of the ID
 - https://s.namd.dev/{ID}+ - params: {ID}: ID for checking - show the destination of the ID
-- https://s.namd.dev/which(/|?get=){ID} - params: {ID}: ID for checking - show the destination of the ID
+- https://s.namd.dev/which(/|?id=){ID} - params: {ID}: ID for checking - show the destination of the ID
 
 ## This app uses:
 - Cloudflare Workers
