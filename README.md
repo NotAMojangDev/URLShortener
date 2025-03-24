@@ -5,7 +5,7 @@ I happend to be bored one day
 and this idea came to me
 
 This app is hosted on Cloudflare Workers at https://s.namd.dev
-
+(no longer hosted, since no one was using it)
 ## Enpoints:
 - https://s.namd.dev/ - Homepage
 - https://s.namd.dev/new?url={URL} - params: {URL} to redirect to - Create a URL and get it back as text
